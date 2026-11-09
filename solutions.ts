@@ -1,5 +1,3 @@
-// problem 01:
-
 const multiplyValue = (value: number, multiplier?: number): number => {
   if (multiplier === 0) {
     return 0;
@@ -9,12 +7,6 @@ const multiplyValue = (value: number, multiplier?: number): number => {
     return value * 2;
   }
 };
-
-// console.log(multiplyValue(10));
-// console.log(multiplyValue(10, 5));
-// console.log(multiplyValue(7, 0));
-
-// problem 02:
 
 type Input = string | number | boolean;
 
@@ -28,13 +20,6 @@ const processInput = (value: Input): Input => {
   }
 };
 
-// console.log(processInput("  TypeScript  "));
-// console.log(processInput(7));
-// console.log(processInput(true));
-// console.log(processInput(false));
-
-// problem 03
-
 type Tuple = readonly [
   latitude: number,
   longitude: number,
@@ -45,18 +30,9 @@ const formatCoordinate = (tuple: Tuple): string => {
   return `Location: ${tuple[2]} (${tuple[0]}, ${tuple[1]})`;
 };
 
-// console.log(formatCoordinate([23.81, 90.41, "Dhaka"]));
-// console.log(formatCoordinate([22.35, 91.78, "Chittagong"]));
-
-// problem 4
-
 const concatenateArrays = <T>(...arrays: T[][]): T[] => {
   return arrays.flat();
 };
-// console.log(concatenateArrays(["a", "b"], ["c", "d"]));
-// console.log(concatenateArrays([1, 2], [3, 4], [5]));
-
-// problem 5
 
 interface Course {
   title: string;
@@ -74,16 +50,6 @@ const getPopularCourses = (arr: Course[], minStudents: number): Course[] => {
   return res;
 };
 
-// const courses = [
-//   { title: "TypeScript Mastery", students: 120, isPublished: true },
-//   { title: "Draft Course", students: 200, isPublished: false },
-//   { title: "Basic HTML", students: 45, isPublished: true },
-//   { title: "Next.js Pro", students: 85, isPublished: true },
-// ];
-// console.log(getPopularCourses(courses, 80));
-
-// problem 6
-
 const pluckValues = <T, K extends keyof T>(items: T[], key: K): T[K][] => {
   const res = [];
   for (const val of items) {
@@ -93,17 +59,6 @@ const pluckValues = <T, K extends keyof T>(items: T[], key: K): T[K][] => {
   }
   return res;
 };
-
-// const users = [
-//   { id: 1, name: "Rakib", role: "Admin" },
-//   { id: 2, name: "Sadia", role: "Editor" },
-//   { id: 3, name: "Tariq", role: "Subscriber" },
-// ];
-
-// console.log(pluckValues(users, "name"));
-// console.log(pluckValues(users, "id"));
-
-// problem 7
 
 class Employee {
   protected name: string;
@@ -126,16 +81,10 @@ class Manager extends Employee {
     super(name, baseSalary);
     this.department = department;
   }
-  getRoleInfo() {
+  getRoleInfo(): string {
     return `Manager of ${this.department}: ${this.name}`;
   }
 }
-
-const manager = new Manager("Alice", 50000, "Engineering");
-console.log(manager.getDetails());
-console.log(manager.getRoleInfo());
-
-// problem 8
 
 const validateAgeAsync = async (age: number): Promise<string> => {
   if (age < 18) {
@@ -148,11 +97,3 @@ const validateAgeAsync = async (age: number): Promise<string> => {
     });
   }
 };
-
-// (async () => {
-//   try {
-//     console.log(await validateAgeAsync(8));
-//   } catch (error) {
-//     console.error(error);
-//   }
-// })();
